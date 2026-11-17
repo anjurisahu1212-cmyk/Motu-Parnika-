@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Motu Parnika's Magical Kingdom 💗</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background: #ffe6f2;
+    color: #a83268;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+button {
+    border: none;
+    padding: 13px 23px;
+    border-radius: 30px;
+    background: #ff75ad;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: 0 5px 12px #e9a4c2;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #f34c91;
+}
+
+section {
+    padding: 65px 15px;
+    min-height: 80vh;
+}
+
+h1 {
+    font-size: clamp(30px, 6vw, 48px);
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin: 15px;
+}
+
+.card {
+    background: #fff5fa;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 25px;
+    max-width: 420px;
+    box-shadow: 0 5px 20px #e9b5cc;
+}
+
+/* WELCOME */
+
+#welcome {
+    min-height: 100vh;
+    background: linear-gradient(#ffd6e9,#fff0f7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* CASTLE */
+
+#castle {
+    background: linear-gradient(#c9e8ff,#ffe2f0);
+}
+
+.castle {
+    font-size: 110px;
+    animation: float 3s infinite ease-in-out;
+}
+
+/* CHIBI CHARACTERS */
+
+.characters {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin: 30px;
+}
+
+.chibi {
+    width: 105px;
+    height: 120px;
+    position: relative;
+    animation: bounce 2s infinite;
+}
+
+.head {
+    width: 85px;
+    height: 85px;
+    background: #ffe0c9;
+    border-radius: 48% 48% 45% 45%;
+    margin: auto;
+    position: relative;
+    box-shadow: inset -5px -5px 0 #f5c6b1;
+}
+
+.head::before {
+    content: "●  ●";
+    white-space: pre;
+    position: absolute;
+    top: 28px;
+    left: 15px;
+    color: #51312d;
+    font-size: 16px;
+}
+
+.head::after {
+    content: "♡";
+    position: absolute;
+    top: 45px;
+    left: 36px;
+    color: #e77c9e;
+}
+
+.boy .head {
+    background: #ffd9bd;
+}
+
+.girl .head {
+    background: #ffe1d8;
+}
+
+.body {
+    width: 55px;
+    height: 40px;
+    background: #83b8ff;
+    border-radius: 20px 20px 12px 12px;
+    margin: -2px auto;
+}
+
+.girl .body {
+    background: #ff8dbd;
+}
+
+.chibi-name {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+/* ACTIVITIES */
+
+#care {
+    background: #fff0f6;
+}
+
+.shoe {
+    font-size: 85px;
+    animation: wiggle 1s infinite;
+}
+
+#animationText {
+    min-height: 55px;
+    font-size: 19px;
+    padding: 15px;
+}
+
+/* GIFTS */
+
+#gifts {
+    background: #ffe4f0;
+}
+
+.gift {
+    display: inline-block;
+    font-size: 65px;
+    margin: 15px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.gift:hover {
+    transform: scale(1.3) rotate(10deg);
+}
+
+/* LOVE METER */
+
+#love {
+    background: #ffd9ea;
+}
+
+.meter {
+    width: 85%;
+    max-width: 350px;
+    height: 25px;
+    background: white;
+    border-radius: 20px;
+    margin: 25px auto;
+    overflow: hidden;
+}
+
+#fill {
+    width: 0%;
+    height: 100%;
+    background: #ff4c91;
+    transition: 2s;
+}
+
+/* LETTER */
+
+#letter {
+    background: #fff0f7;
+}
+
+.envelope {
+    font-size: 100px;
+    cursor: pointer;
+    animation: float 2s infinite;
+}
+
+#message {
+    display: none;
+    line-height: 1.8;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    animation: rise 5s linear forwards;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes float {
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes bounce {
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes wiggle {
+    50% { transform: rotate(10deg); }
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME -->
+
+<section id="welcome">
+
+<h1>Welcome, My Princess! 👑</h1>
+
+<div style="font-size:90px;">🏰</div>
+
+<h2>For My Motu Parnika 🐷🐽</h2>
+
+<p>A magical little kingdom made especially for you.</p>
+
+<button onclick="enterKingdom()">
+Enter My Kingdom 💗
+</button>
+
+</section>
+
+
+<!-- CASTLE -->
+
+<section id="castle">
+
+<h1>Your Magical Kingdom 🏰</h1>
+
+<div class="castle">🏰</div>
+
+<p>Welcome to your little fairytale world, Princess!</p>
+
+<div class="characters">
+
+<div class="chibi boy">
+<div class="head"></div>
+<div class="body"></div>
+<div class="chibi-name">Your Prince 🤴</div>
+</div>
+
+<div class="chibi girl">
+<div class="head"></div>
+<div class="body"></div>
+<div class="chibi-name">Motu Parnika 👸</div>
+</div>
+
+</div>
+
+<p>Two little characters in one big fairytale. 💕</p>
+
+</section>
+
+
+<!-- TAKING CARE -->
+
+<section id="care">
+
+<h1>Let Me Take Care of You 🥺</h1>
+
+<div class="card">
+
+<div class="shoe">👟</div>
+
+<h2>Your shoelaces are untied!</h2>
+
+<button onclick="tieShoes()">
+Tie My Shoes 🎀
+</button>
+
+<div id="animationText"></div>
+
+</div>
+
+<div class="card">
+
+<h2>What does my princess need?</h2>
+
+<button onclick="care('Holding your hand 🤝')">
+Hold My Hand
+</button>
+
+<button onclick="care('Giving you flowers 🌹')">
+Give Me Flowers
+</button>
+
+<button onclick="care('Walking beside you ☂️')">
+Walk With Me
+</button>
+
+<div id="careText"></div>
+
+</div>
+
+</section>
+
+
+<!-- GIFTS -->
+
+<section id="gifts">
+
+<h1>Choose Your Royal Gift 🎁</h1>
+
+<p>What would my princess like today?</p>
+
+<div class="card">
+
+<div class="gift" onclick="gift('🌹 Flowers')">🌹</div>
+
+<div class="gift" onclick="gift('🧸 Teddy Bear')">🧸</div>
+
+<div class="gift" onclick="gift('🍫 Chocolates')">🍫</div>
+
+<h2 id="giftText">Choose your gift!</h2>
+
+</div>
+
+</section>
+
+
+<!-- LOVE METER -->
+
+<section id="love">
+
+<h1>How Much Do You Love Me? 💗</h1>
+
+<div class="card">
+
+<div style="font-size:70px;">🐷💕</div>
+
+<button onclick="loveMeter()">Calculate My Love</button>
+
+<div class="meter">
+<div id="fill"></div>
+</div>
+
+<h2 id="loveText">Waiting for your answer...</h2>
+
+</div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section id="letter">
+
+<h1>A Secret For My Princess 💌</h1>
+
+<p>There's one last surprise waiting for you.</p>
+
+<div class="envelope" onclick="openLetter()">
+💌
+</div>
+
+<button onclick="openLetter()">
+Open Your Letter 💗
+</button>
+
+<div class="card" id="message">
+
+<h2>To My Motu Parnika 🐷💗</h2>
+
+<p>
+Happy Princess Day, my princess! 👑
+</p>
+
+<p>
+I made this little magical world just for you.
+Every little corner has a tiny surprise waiting for you.
+</p>
+
+<p>
+You deserve all the happiness, care, flowers,
+chocolates and princess treatment in the world.
+</p>
+
+<p>
+Keep smiling, my little Motu! 🐷
+</p>
+
+<h2>Forever Your Prince 💗</h2>
+
+</div>
+
+</section>
+
+
+<script>
+
+function enterKingdom() {
+    document.getElementById("castle").scrollIntoView();
+    hearts();
+}
+
+function tieShoes() {
+
+    let text = document.getElementById("animationText");
+
+    text.innerHTML = "🥺 Your prince is coming...";
+
+    setTimeout(() => {
+        text.innerHTML = "🤴 Kneeling down to tie your shoes...";
+    }, 1200);
+
+    setTimeout(() => {
+        text.innerHTML = "🎀 Your shoelaces are tied! You're my princess!";
+        hearts();
+    }, 2800);
+}
+
+function care(action) {
+
+    document.getElementById("careText").innerHTML =
+    "💗 " + action + "<br>Anything for my princess!";
+
+    hearts();
+}
+
+function gift(name) {
+
+    document.getElementById("giftText").innerHTML =
+    "You chose " + name + "! 🎁<br>It's all yours, Princess!";
+
+    hearts();
+}
+
+function loveMeter() {
+
+    document.getElementById("fill").style.width = "100%";
+
+    document.getElementById("loveText").innerHTML =
+    "ERROR 404: Too much love to calculate! 🐷💕";
+    
+    hearts();
+}
+
+function openLetter() {
+
+    document.getElementById("message").style.display = "block";
+
+    document.getElementById("message").scrollIntoView({
+        behavior: "smooth"
+    });
+
+    hearts();
+}
+
+function hearts() {
+
+    for(let i=0; i<12; i++) {
+
+        let heart = document.createElement("div");
+
+        heart.className = "heart";
+        heart.innerHTML = ["💗","💕","💖","🌸"][Math.floor(Math.random()*4)];
+
+        heart.style.left = Math.random()*100 + "vw";
+        heart.style.fontSize = "25px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+}
+
+</script>
+
+</body>
+</html>
